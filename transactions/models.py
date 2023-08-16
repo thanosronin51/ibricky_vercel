@@ -140,7 +140,7 @@ class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     payment_method = models.CharField(choices=PAYMENT_CHOICES, max_length=10)
     amount = models.DecimalField(max_digits=15, decimal_places=2)
-    proof_of_pay =models.ImageField(upload_to='deposits/', null=True, blank=True)
+    proof_of_pay =CloudinaryField("image", default="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1-768x768.jpg")
     status = models.CharField(choices=STATUS_CHOICES, max_length=10, default='PENDING')
     date = models.DateTimeField(auto_now_add=True)
     timestamp = models.DateTimeField(auto_now_add=True)
