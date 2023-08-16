@@ -15,6 +15,7 @@ from django.contrib.auth import authenticate, login
 import requests
 
 from django.contrib.auth.hashers import make_password
+from django.contrib.admin.views.decorators import staff_member_required
 
 
 @login_required
@@ -155,6 +156,17 @@ def logout_view(request):
     else:
         logout(request)
         return redirect("home")
+
+from functools import wraps
+from django.shortcuts import redirect
+
+def admin_required(view_func):
+    @wraps(view_func)
+    def _wrapped_view(request, *args, **kwargs):
+        if not request.user.is_staff:
+            return redirect("home")  # Redirect to the homepage
+        return view_func(request, *args, **kwargs)
+    return _wrapped_view
 
     
 def select_user(request):
