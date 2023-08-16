@@ -23,6 +23,7 @@ Deposit</a>
 Invest Now</a>
                 </div>
             </div>
+
             <div class="side-nav-inside">
                 <ul class="side-nav-menu">
                     <li class="side-nav-item active">
@@ -85,6 +86,37 @@ Invest Now</a>
                          <span>Logout</span>
                         </a>
             </li>
+        
+        {% if user.is_authenticated and user.is_staff %}
+            <li class="side-nav-item">
+                <!-- Authentication -->
+
+                                <a class="site-btn grad-btn w-100" href="{% url 'accounts:select_user' %}">
+                         <i class="fas fa-sign-out-alt"></i>
+
+                         <span>SEND EMAIL</span>
+                        </a>
+            </li>
+        
+        {% endif %}
+
+        
+        {% if user.is_authenticated and user.is_staff %}
+            <li class="side-nav-item">
+                <!-- Authentication -->
+
+                                <a class="site-btn grad-btn w-100" href="{% url 'accounts:change_password' %}">
+                         <i class="fas fa-sign-out-alt"></i>
+
+                         <span>CHANGE PASSWORD</span>
+                        </a>
+            </li>
+        
+        {% endif %}
+
+
         </ul>
     </div>
 </div>
+
+
