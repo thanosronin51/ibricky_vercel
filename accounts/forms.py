@@ -245,8 +245,14 @@ class UserAddressForm(forms.ModelForm):
 
 
 class UserLoginForm(forms.Form):
-    username = forms.CharField(label="Username/Email")
-    password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Username/Email'}),
+        error_messages={'required': 'Please enter the Username/Email.'}
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Enter Password'}),
+        error_messages={'required': 'Please enter the Password.'}
+    )
 
     def clean(self, *args, **kwargs):
         username = self.cleaned_data.get("username")
