@@ -13,20 +13,28 @@ class UserProfileForm(UserChangeForm):
         model = User
         fields = ['first_name', 'last_name', 'email', 'username']
 
-
 class AccountDetailsForm(forms.ModelForm):
     class Meta:
         model = AccountDetails
         fields = ['gender', 'birth_date', 'picture']
-
+        widgets = {
+            'gender': forms.Select(attrs={'class': 'form-select'}),
+            'birth_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'picture': forms.ClearableFileInput(attrs={'class': 'form-control'}),
+        }
 
 class UserAddressForm(forms.ModelForm):
     class Meta:
         model = UserAddress
         fields = ['street_address', 'city', 'postal_code', 'country']
+        widgets = {
+            'street_address': forms.TextInput(attrs={'class': 'form-control'}),
+            'city': forms.TextInput(attrs={'class': 'form-control'}),
+            'postal_code': forms.TextInput(attrs={'class': 'form-control'}),
+            'country': forms.Select(attrs={'class': 'form-select'}),
+        }
 
 class UserRegistrationForm(UserCreationForm):
-
     class Meta:
         model = User
         fields = [
@@ -38,18 +46,16 @@ class UserRegistrationForm(UserCreationForm):
             "password2",
             "contact_no",
         ]
+        widgets = {
+            'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'password1': forms.PasswordInput(attrs={'class': 'form-control'}),
+            'password2': forms.PasswordInput(attrs={'class': 'form-control'}),
+            'contact_no': forms.TextInput(attrs={'class': 'form-control'}),
+        }
 
-
-class AccountDetailsForm(forms.ModelForm):
-
-    class Meta:
-        model = AccountDetails
-        fields = [
-
-            'gender',
- 
-            
-        ]
 
 
 class UserAddressForm(forms.ModelForm):
