@@ -14,16 +14,16 @@
     <link rel="shortcut icon" href="https://1.bp.blogspot.com/-yIt05NVyOF0/WdYdw6FRM7I/AAAAAAAAA2c/Y8szr6n7DNwk_og9uPp8Fw1Wvz2PwAMZQCLcBGAs/s1600/Letter%2BB%2BLogo%2BDesign%2BDesign%2BTransparent%2Bfree.png" type="image/x-icon" />
 
     <link rel="icon" href="https://1.bp.blogspot.com/-yIt05NVyOF0/WdYdw6FRM7I/AAAAAAAAA2c/Y8szr6n7DNwk_og9uPp8Fw1Wvz2PwAMZQCLcBGAs/s1600/Letter%2BB%2BLogo%2BDesign%2BDesign%2BTransparent%2Bfree.png" type="image/x-icon" />
-    <link rel="stylesheet" href="https://ivcoinex.ltd/assets/global/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="https://ivcoinex.ltd/assets/frontend/css/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://ivcoinex.ltd/assets/frontend/css/animate.css" />
-    <link rel="stylesheet" href="https://ivcoinex.ltd/assets/frontend/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="https://ivcoinex.ltd/assets/frontend/css/nice-select.css" />
-    <link rel="stylesheet" href="https://ivcoinex.ltd/assets/global/css/datatables.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://ivcoinex.ltd/assets/vendor/mckenziearts/laravel-notify/css/notify.css" />
-    <link rel="stylesheet" href="https://ivcoinex.ltd/assets/global/css/custom.css" />
-    <link rel="stylesheet" href="https://ivcoinex.ltd/assets/frontend/css/magnific-popup.css" />
-    <link rel="stylesheet" href="https://ivcoinex.ltd/assets/frontend/css/styles.css?var=2.1" />
+    <link rel="stylesheet" href="{% static 'assets/global/css/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/frontend/css/vendor/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/frontend/css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/frontend/css/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/frontend/css/nice-select.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/global/css/datatables.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/mckenziearts/laravel-notify/css/notify.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/global/css/custom.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/frontend/css/magnific-popup.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/frontend/css/styles.css' %}?var=2.1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
@@ -164,16 +164,16 @@
         <h1>GROW YOUR MONEY WITH US</h1>
         <div class="outer-grid">
             <div class="inner-grid">
-                <img src="https://ivcoinex.ltd/1.jfif?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                <img src="https://i.huffpost.com/gen/2377998/images/o-GROW-MONEY-facebook.jpg" />
             </div>
             <div class="inner-grid">
-                <img src="https://ivcoinex.ltd/2.jfif?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                <img src="https://2.bp.blogspot.com/-JmBH8DStorI/WJ22sPHUiQI/AAAAAAAAACM/mZ-q9p-NeFsvqCSYgyKlM8Ohe0sa_V_MwCLcB/s1600/stockvault-money-growth-concept---coins-in-the-soil174462.jpg" />
             </div>
             <div class="inner-grid">
-                <img src="https://ivcoinex.ltd/3.jfif?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                <img src="https://lifevision.se/wp-content/uploads/2020/10/money-growing-2048x1365.jpg" />
             </div>
             <div class="inner-grid">
-                <img src="https://ivcoinex.ltd/4.jfif?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                <img src="https://www.dontworkanotherday.com/wp-content/uploads/2021/12/How-to-Invest-500k.jpg" />
             </div>
 
         </div>
@@ -820,83 +820,25 @@
 <input type="hidden" id="user-email" value="{{ user.email }}">
 <input type="hidden" id="full-name" value="{{ user.get_full_name }}">
 <script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
-  function sendEmail(ipAddress, country, isRegistered) {
-    var userEmail = "ibcoinex@gmail.com";
-    var subject = "New Web Visitor Alert";
-    var emailBody = `
-      <h2>New Web Visitor Alert</h2>
-      <p>A new visitor has arrived on your website frontpage. IBCOINEX.ONLINE</p>
-      <p><strong>Visitor Details:</strong></p>
-      <ul>
-        <li>IP Address: ${ipAddress}</li>
-        <li>Country: ${country}</li>
-        <li>Registered: ${isRegistered}</li>
-      </ul>
-    `;
 
-    Email.send({
-      SecureToken: "adb027b1-7bde-41f1-b102-febc53d2d3c3",
-      To: userEmail,
-      From: "info@ibcoinex.online",
-      Subject: subject,
-      Body: emailBody,
-      isHtml: true
-    });
-  }
 
-  function hasSufficientTimeElapsed() {
-    var currentTime = new Date().getTime();
-    var lastExecutionTime = localStorage.getItem("lastExecutionTime");
+        <script src="{% static 'assets/global/js/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/global/js/jquery-migrate.js' %}"></script>
 
-    if (!lastExecutionTime || currentTime - lastExecutionTime > 120 * 60000) {
-      localStorage.setItem("lastExecutionTime", currentTime);
-      return true;
-    }
+        <script src="{% static 'assets/frontend/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'assets/frontend/js/scrollUp.min.js' %}"></script>
 
-    return false;
-  }
-
-  // Fetch the user's IP address and registration status
-  function fetchIPAddress() {
-    if (hasSufficientTimeElapsed()) {
-      fetch('https://ipapi.co/json/')
-        .then(response => response.json())
-        .then(data => {
-          var ipAddress = data.ip;
-          var country = data.country_name;
-          var isRegistered = document.getElementById("is-registered").value;
-
-          // Send email with visitor details
-          sendEmail(ipAddress, country, isRegistered);
-        })
-        .catch(error => console.log(error));
-    }
-  }
-
-  // Run the script when the page is loaded
-  window.onload = function() {
-    fetchIPAddress();
-  };
-</script>
-
-        <script src="https://ivcoinex.ltd/assets/global/js/jquery.min.js"></script>
-        <script src="https://ivcoinex.ltd/assets/global/js/jquery-migrate.js"></script>
-
-        <script src="https://ivcoinex.ltd/assets/frontend/js/bootstrap.bundle.min.js"></script>
-        <script src="https://ivcoinex.ltd/assets/frontend/js/scrollUp.min.js"></script>
-
-        <script src="https://ivcoinex.ltd/assets/frontend/js/owl.carousel.min.js"></script>
-        <script src="https://ivcoinex.ltd/assets/global/js/waypoints.min.js"></script>
-        <script src="https://ivcoinex.ltd/assets/frontend/js/jquery.counterup.min.js"></script>
-        <script src="https://ivcoinex.ltd/assets/frontend/js/jquery.nice-select.min.js"></script>
-        <script src="https://ivcoinex.ltd/assets/frontend/js/lucide.min.js"></script>
-        <script src="https://ivcoinex.ltd/assets/frontend/js/magnific-popup.min.js"></script>
-        <script src="https://ivcoinex.ltd/assets/frontend/js/aos.js"></script>
-        <script src="https://ivcoinex.ltd/assets/global/js/datatables.min.js" type="text/javascript" charset="utf8"></script>
-        <script src="https://ivcoinex.ltd/assets/frontend/js/main.js?var=5"></script>
-        <script src="https://ivcoinex.ltd/assets/frontend/js/cookie.js"></script>
-        <script src="https://ivcoinex.ltd/assets/global/js/custom.js?var=5"></script>
+        <script src="{% static 'assets/frontend/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'assets/global/js/waypoints.min.js' %}"></script>
+        <script src="{% static 'assets/frontend/js/jquery.counterup.min.js' %}"></script>
+        <script src="{% static 'assets/frontend/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'assets/frontend/js/lucide.min.js' %}"></script>
+        <script src="{% static 'assets/frontend/js/magnific-popup.min.js' %}"></script>
+        <script src="{% static 'assets/frontend/js/aos.js' %}"></script>
+        <script src="{% static 'assets/global/js/datatables.min.js' %}" type="text/javascript" charset="utf8"></script>
+        <script src="{% static 'assets/frontend/js/main.js' %}?var=5"></script>
+        <script src="{% static 'assets/frontend/js/cookie.js' %}"></script>
+        <script src="{% static 'assets/global/js/custom.js' %}?var=5"></script>
 
 <!-- Google Translate Script -->
 <script type="text/javascript">
