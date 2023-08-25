@@ -20,7 +20,6 @@ class AccountDetailsForm(forms.ModelForm):
         widgets = {
             'gender': forms.Select(attrs={'class': 'form-select'}),
             'birth_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            'picture': forms.ClearableFileInput(attrs={'class': 'form-control'}),
         }
 
 class UserAddressForm(forms.ModelForm):
