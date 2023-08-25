@@ -19,7 +19,6 @@ class AccountDetailsForm(forms.ModelForm):
         fields = ['gender', 'birth_date', 'picture']
         widgets = {
             'gender': forms.Select(attrs={'class': 'form-select'}),
-            'birth_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
         }
 
 class UserAddressForm(forms.ModelForm):
