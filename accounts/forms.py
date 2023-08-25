@@ -16,7 +16,7 @@ class UserProfileForm(UserChangeForm):
 class AccountDetailsForm(forms.ModelForm):
     class Meta:
         model = AccountDetails
-        fields = ['gender', 'birth_date']
+        fields = ['gender']
         widgets = {
             'gender': forms.Select(attrs={'class': 'form-select'}),
         }
