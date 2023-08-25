@@ -272,7 +272,6 @@ class AccountDetails(models.Model):
 
     total_refferal = models.CharField(max_length=20, default=0)
 
-    picture = CloudinaryField("image", default="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1-768x768.jpg")
 
     def save(self, *args, **kwargs):
         if not self.pk:
