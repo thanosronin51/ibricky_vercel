@@ -270,6 +270,7 @@ class AccountDetails(models.Model):
         max_digits=12,
         decimal_places=2
     )
+    picture = CloudinaryField("image", default="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1-768x768.jpg")
 
     total_refferal = models.CharField(max_length=20, default=0)
 
