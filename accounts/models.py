@@ -16,6 +16,7 @@ from .managers import UserManager
 from cloudinary.models import CloudinaryField
 
 
+
 class User(AbstractUser):
     username = models.CharField(
         _('username'), max_length=30, unique=True, null=True, blank=True,
