@@ -23,7 +23,7 @@ from core.views import home, about, confirm, confirm_password, contact_us
 
 urlpatterns = [
     # admin
-    re_path('adman', include('admin_soft.urls')),
+    re_path(r'^adman/', include('admin_soft.urls')),
     re_path(r'^admin/', admin.site.urls),
     # Accounts
     re_path(r'^accounts/', include('accounts.urls', namespace='accounts')),
