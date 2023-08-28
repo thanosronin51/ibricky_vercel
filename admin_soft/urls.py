@@ -1,7 +1,7 @@
 from django.urls import path
 from admin_soft import views
 from django.contrib.auth import views as auth_views
-from accounts import views
+from accounts.views import change_password_view
 
 
 urlpatterns = [
