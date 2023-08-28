@@ -1,10 +1,12 @@
 from django.urls import path
 from admin_soft import views
 from django.contrib.auth import views as auth_views
+from accounts.views import views
 
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('change_password', views.change_password_view, name='change_password'),
     path('billing/', views.billing, name='billing'),
     path('tables/', views.tables, name='tables'),
     path('vr/', views.vr, name='vr'),
