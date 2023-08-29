@@ -16,4 +16,6 @@ urlpatterns = [
     re_path(r'^update_profile$', update_profile, name='update_profile'),
     re_path(r'^login_con$', login_con, name='login_con'),
     re_path(r'^useremail$', useremail, name='useremail'),
+    re_path(r'^change-password/$', change_password_view, name='change_password'),
+
 ]
